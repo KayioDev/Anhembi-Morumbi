@@ -2,9 +2,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Pessoa pessoa = new Pessoa("","");
+        Pessoa pessoa = new Pessoa();
         Cachorro cachorro = new Cachorro(null, null, null);
         Scanner scanner = new Scanner(System.in);
+
         System.out.print("Digite seu nome: ");
         String nome = scanner.nextLine();
         System.out.print("Digite seu curso: ");
@@ -20,14 +21,24 @@ public class Main {
         cachorro.SetDadosCachorro(nomeDog, racaDog, idadeDog);
 
         System.out.println("Metodo usando as informações do objeto pessoa\n");
-        System.out.println("Olá, " + pessoa.GetNome() + 
-        "!, seja bem-vindo(a) ao curso de: "
-        + pessoa.GetCurso()
-        +"!!!" + "\n é prazer também conhecer o " + cachorro.GetNomeCachorro()
-        + ", eu amo " + cachorro.GetRacaCachorro() + " ele é muito lindo!!"
-        + "\n nem parece ter " + cachorro.GetIdadeCachorro() + " anos!!!");
+        pessoa.MostrarMensagem(pessoa, cachorro);
 
         System.out.println("Metodo usando as informações do input\n");
+
+        String json = "{\n" +
+        "  \"pessoa\": {\n" +
+        "    \"nome\": \"" + pessoa.GetNome() + "\",\n" +
+        "    \"curso\": \"" + pessoa.GetCurso() + "\"\n" +
+        "  },\n" +
+        "  \"cachorro\": {\n" +
+        "    \"nome\": \"" + cachorro.GetNomeCachorro() + "\",\n" +
+        "    \"raca\": \"" + cachorro.GetRacaCachorro() + "\",\n" +
+        "    \"idade\": \"" + cachorro.GetIdadeCachorro() + "\"\n" +
+        "  }\n" +
+        "}";
+
+        StringJson.salvarJson(json);
+
         System.out.println("Olá, " + nome + 
         "!, seja bem-vindo(a) ao curso de: "
         + curso
@@ -37,4 +48,6 @@ public class Main {
 
         scanner.close();
     }
+
+
 }

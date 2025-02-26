@@ -1,0 +1,11 @@
+{
+  "pessoa": {
+    "nome": "Kaio",
+    "curso": "Eng. de Software"
+  },
+  "cachorro": {
+    "nome": "Manki",
+    "raca": "Golden",
+    "idade": "10"
+  }
+}

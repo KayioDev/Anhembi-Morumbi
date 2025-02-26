@@ -7,6 +7,8 @@ public class Pessoa {
         this.nome = nome;
         this.curso = curso;
     }
+    public Pessoa () 
+    {}
 
     public String GetNome ()
     {
@@ -21,6 +23,17 @@ public class Pessoa {
     {
         this.nome = Nome;
         this.curso = Curso;
+    }
+
+
+    public void MostrarMensagem (Pessoa pessoa, Cachorro cachorro) 
+    {
+        System.out.println("Olá, " + pessoa.GetNome() + 
+        "!, seja bem-vindo(a) ao curso de: "
+        + pessoa.GetCurso()
+        +"!!!" + "\n é prazer também conhecer o " + cachorro.GetNomeCachorro()
+        + ", eu amo " + cachorro.GetRacaCachorro() + ", ele é muito lindo!!"
+        + "\n nem parece ter " + cachorro.GetIdadeCachorro() + " anos!!!\n");
     }
 
 }
